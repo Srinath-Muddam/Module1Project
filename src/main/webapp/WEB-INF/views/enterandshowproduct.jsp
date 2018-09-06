@@ -69,6 +69,55 @@
                                 </div>
                                 
                                 
+                                <!-- testing temporary code -->   
+                                
+                                
+                                Category:<br>
+                                <div class="form-group">
+                                 <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"></i></div>
+                                        </div>
+     <st:select  path="category"  >
+     <jstl:forEach items="${category}" var="category">
+    <option value="${category.categoryName}">${category.categoryName}</option>
+    
+    </jstl:forEach>
+  </st:select>
+            
+            
+          
+                      
+                                
+                                
+                     </div>
+                                
+                            </div>
+                            
+                                
+                               Supplier:<br>
+                                <div class="form-group">
+                                 <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"></i></div>
+                                        </div>
+     <st:select  path="supplierName"  >
+     <jstl:forEach items="${supplier}" var="supplier">
+    <option value="${supplier.supplierName}">${supplier.supplierName}</option>
+    
+    </jstl:forEach>
+  </st:select>
+            
+            
+          
+                      
+                                
+                                
+                     </div>
+                                
+                            </div>
+                            
+                                
                                 
                                 
                                                                 <div class="text-center">

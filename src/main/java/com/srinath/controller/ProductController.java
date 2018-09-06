@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.srinath.interfaceandimplements.CategoryDao;
 import com.srinath.interfaceandimplements.ProductDao;
+import com.srinath.interfaceandimplements.SuplierDao;
 import com.srinath.pojo.Category;
 import com.srinath.pojo.Product;
 
@@ -24,7 +26,10 @@ public class ProductController
 	
 @Autowired
 ProductDao pd;
-
+@Autowired
+CategoryDao cd;
+@Autowired
+SuplierDao sd;
 	@RequestMapping("/product")
 	public ModelAndView toProductJsp()
 	{
@@ -32,6 +37,10 @@ ProductDao pd;
 	ModelAndView m1=new ModelAndView("enterandshowproduct","pro",new Product());
 	List productData=pd.fromDatabase();
 	m1.addObject("pd",productData);
+	List  categories=cd.fromDatabase();
+	m1.addObject("category",categories);
+	List supplier=sd.fromDatabase();
+	m1.addObject("supplier",supplier);
 	return m1;
 		
 	}
@@ -52,8 +61,15 @@ ProductDao pd;
 	
 		pd.insert(product);
 		List productData=pd.fromDatabase();
-		return new ModelAndView("enterandshowproduct","pd",productData);
+		List categories=cd.fromDatabase();
+		
 	
+		ModelAndView m1=new ModelAndView("enterandshowproduct","pro",new Product());
+		m1.addObject("category",categories);
+	   m1.addObject("pd", productData);
+	   List supplier=sd.fromDatabase();
+		m1.addObject("supplier",supplier);
+	return m1;
 }
 	@RequestMapping("/prodelete")
 	public ModelAndView delete(@RequestParam("proId") int ProductId)
@@ -61,6 +77,8 @@ ProductDao pd;
 		pd.delete(ProductId);
 		ModelAndView mv=new ModelAndView("enterandshowproduct","pro",new Product()); 
 		List productList=pd.fromDatabase();
+		List categories=cd.fromDatabase();
+		mv.addObject("category",categories);
 		mv.addObject("pd",productList);
 	return mv;
 	}
@@ -69,6 +87,11 @@ ProductDao pd;
 	{
 		Product p=pd.edit(ProductId);
 		ModelAndView mv=new ModelAndView("enterandshowproduct","pro",p);
+		
+		List categories=cd.fromDatabase();
+		mv.addObject("category",categories);
+		List supplier=sd.fromDatabase();
+		mv.addObject("supplier",supplier);
 		return mv;
 	}
 	}
