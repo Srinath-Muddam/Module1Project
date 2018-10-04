@@ -10,32 +10,36 @@
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+<h1 class="text-center">Welcome <%=session.getAttribute("UserName")%></h1>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
  <!-- Brand -->
- <a class="navbar-brand" href="">Mobile Phones</a>
+ <a class="navbar-brand" href="">A2Z</a>
 
  <!-- Links -->
  <ul class="navbar-nav">
    <li class="nav-item">
-     <a class="nav-link" href="index.jsp">Home</a>
+     <a class="nav-link" href="adminhome">Home</a>
    </li>
-   <li class="nav-item">
-     <a class="nav-link" href="perform_logout">Logout</a>
-   </li>
+   
 
    <!-- Dropdown -->
+   <div class="row">
    <li class="nav-item dropdown">
-     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-       Go to
-     </a>
+     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="margin-left:11px;">Add or Update</a>
      <div class="dropdown-menu">
        <a class="dropdown-item" href="product.html">Products</a>
        <a class="dropdown-item" href="category.html">Category</a>
        <a class="dropdown-item" href="supplier.html">Supplier</a>
      </div>
    </li>
+   </div>
  </ul>
+ <ul class="nav navbar-nav navbar-right" style="margin-left:1198px;">
+ <li class="nav-item ">
+     <a class="nav-link" href="perform_logout">Logout</a>
+   </li>
+ </ul>
+ 
 </nav>
 <br>
 

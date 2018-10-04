@@ -12,10 +12,13 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="st" %>
 
 <title>Insert title here</title>
+
+</head>
+<body>
 <script>
 function password()
 {
-	var x=f1.password.value();
+	var x=document.getElementById("password")
 	if(x.length>6)
 		{
 		return true;
@@ -34,12 +37,9 @@ function password()
 
 
 </script>
-</head>
-<body>
-
 <st:form name="f1"  action="register" method="post" commandName="register" onsubmit="password()">
 Username:<st:input path="userName" />  <br>
-Password:<st:input type="password" path="password" /> <br>
+Password:<st:input type="password" path="password" name="password"/> <br>
 Date of Birth(DD-MM-YY):<st:input path="dateOfBirth" /> <br>
 Phone number:<st:input  path="phoneNumber" /> <br>
 Address:<st:input  path="address" /> <br>

@@ -60,11 +60,26 @@ public class CartDaoImpl implements CartDao
 		
 		Session session=sf.openSession();
 		Query query=session.createQuery(hql);
+		
 		query.setParameter("uname",un);
 		List cartdata=query.list();
 		session.close();
 		return cartdata;
 		
+		
+	}
+
+	
+	public Long totalItems(String username)
+	{
+	String hql="select count(*) from Cart where cartuser=:uname";
+	Session session=sf.openSession();
+	
+	Query query=session.createQuery(hql);
+	query.setParameter("uname",username);
+	Long items=(Long)query.uniqueResult();
+	//System.out.println(items);
+	return items;
 		
 	}
 

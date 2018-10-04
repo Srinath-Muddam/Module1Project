@@ -10,18 +10,18 @@
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+<h1 class="text-center">Welcome Admin!</h1>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
  <!-- Brand -->
- <a class="navbar-brand" href="index.jsp">Mobile Phones</a>
+ <a class="navbar-brand" href="">Mobile Phones</a>
 
  <!-- Links -->
  <ul class="navbar-nav">
    <li class="nav-item">
-     <a class="nav-link" href="#">Home</a>
+     <a class="nav-link" href="index.jsp">Home</a>
    </li>
    <li class="nav-item">
-     <a class="nav-link" href="#">Login</a>
+     <a class="nav-link" href="perform_logout">Logout</a>
    </li>
 
    <!-- Dropdown -->
@@ -38,52 +38,6 @@
  </ul>
 </nav>
 <br>
-
-<div class="container">
- <h3></h3>
- <p></p>
-</div>
-
-
-<div class="container mt-3">
-
-
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="1600" data-keyboard="false">
-
- <!-- Indicators -->
- <ul class="carousel-indicators">
-   <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-   <li data-target="#myCarousel" data-slide-to="1"></li>
-   <li data-target="#myCarousel" data-slide-to="2"></li>
- </ul>
-
- <!-- The slideshow -->
- <div class="carousel-inner">
-   <div class="carousel-item active">
-     <img src="resources/iphonex.jpg" alt="e" width="1200" height="500">
-   </div>
-   <div class="carousel-item">
-     <img src="resources/samsung.jpg" alt="a" width="1200" height="500">
-   </div>
-   <div class="carousel-item">
-     <img src="resources/sony.jpg" alt="q" width="1200" height="500">
-   </div>
- </div>
-
- <!-- Left and right controls -->
- <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-   <span class="carousel-control-prev-icon"></span>
- </a>
- <a class="carousel-control-next" href="#myCarousel" data-slide="next">
-   <span class="carousel-control-next-icon"></span>
- </a>
-</div>
-
-</div>
-
-
-
-
 
 
 

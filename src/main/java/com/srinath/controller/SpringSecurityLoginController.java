@@ -13,12 +13,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.srinath.interfaceandimplements.AuthenticationDao;
+import com.srinath.interfaceandimplements.CartDao;
 import com.srinath.pojo.Registration;
 
 @Controller
 public class SpringSecurityLoginController 
 {
-	
+	@Autowired
+	CartDao cart;
 	@Autowired
 	AuthenticationDao ad;
 	
@@ -56,6 +58,10 @@ public ModelAndView loginError()
 	                 session.setAttribute("UserName", user.getUserName());
 	             page="/NewHome";
 	                 session.setAttribute("test",1);
+	                 
+	                 Long noOfItems=cart.totalItems(user.getUserName());
+	         		//System.out.println(noOfItems);
+	         		session.setAttribute("cartitems", noOfItems);
 	                
 	             }
 	             else

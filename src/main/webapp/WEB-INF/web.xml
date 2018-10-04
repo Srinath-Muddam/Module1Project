@@ -12,7 +12,7 @@
   </servlet-mapping>
 
   <welcome-file-list>
-     <welcome-file>/WEB-INF/views/NewHome.jsp</welcome-file>
+     <welcome-file>/WEB-INF/views/newnewHome.jsp</welcome-file>
   </welcome-file-list>
   <context-param>
 <param-name>contextConfigLocation</param-name>

@@ -43,7 +43,7 @@
    
    </li>
    
-   
+  <!--  
    <li class="nav-item">
      
         
@@ -56,10 +56,49 @@
           <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
         </a>
       </p> 
-   </li>
+   </li> -->
  </ul>
 </nav>
 <br>
+
+
+
+<div class="container mt-3">
+
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="1600" data-keyboard="false">
+
+ <!-- Indicators -->
+ <ul class="carousel-indicators">
+   <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+   <li data-target="#myCarousel" data-slide-to="1"></li>
+   <li data-target="#myCarousel" data-slide-to="2"></li>
+ </ul>
+
+ <!-- The slideshow -->
+ <div class="carousel-inner">
+   <div class="carousel-item active">
+     <img src="resources/iphonex.jpg" alt="e" width="1200" height="500">
+   </div>
+   <div class="carousel-item">
+     <img src="resources/samsung.jpg" alt="a" width="1200" height="500">
+   </div>
+   <div class="carousel-item">
+     <img src="resources/sony.jpg" alt="q" width="1200" height="500">
+   </div>
+ </div>
+
+ <!-- Left and right controls -->
+ <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+   <span class="carousel-control-prev-icon"></span>
+ </a>
+ <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+   <span class="carousel-control-next-icon"></span>
+ </a>
+</div>
+
+</div>
+
 
 
 

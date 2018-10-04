@@ -8,8 +8,27 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<style type="text/css">
+.badge-notify{
+   background:red;
+   position:relative;
+   top: -20px;
+   left: -35px;
+}
+
+
+
+</style>
+
 </head>
 <body>
+
+<div class="container">
+  <button class="btn btn-default btn-lg btn-link" style="font-size:36px;">
+    <span class="glyphicon glyphicon-comment"></span>
+  </button>
+  <span class="badge badge-notify">3</span>
+</div>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
  <!-- Brand -->

@@ -21,8 +21,14 @@
         
     </tr>
   </thead>
-  <tbody>
-    <jstl:forEach items="${cart}" var="p">
+  <tbody >
+  
+  
+    
+    <jstl:forEach  items="${cart}" var="p" >
+    
+    <jstl:set var="payableAmount" value="${payableAmount+p.totalPrice}" />
+    
     <tr class="success">
     <td>${p.cartUser}</td>
     <td>${p.cartId}</td>
@@ -42,6 +48,14 @@
    
   </tbody>
 </table>
+
+
+
+ <div class="row">
+    <div class="col text-center" style="background-color:lavender;"><a href="cancelOrder"><button class="btn btn-success" >cancel order</button></a></div>
+    <div class="col text-center" style="background-color:lavender;">GRAND TOTAL=${payableAmount}</div>
+    <div class="col text-center" style="background-color:lavender;"><a><button class="btn btn-success" >buy now</button></a></div>
+  </div>
 
 </div>
 

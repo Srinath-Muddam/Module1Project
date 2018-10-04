@@ -31,9 +31,12 @@ public class CartController
 	@RequestMapping("/cart")
 ModelAndView cart(@RequestParam("id")int id, @RequestParam("quantity")int q ) 
 	{  
+
   
 		String username=(String)session.getAttribute("userId");
-	
+		Long noOfItems=cart.totalItems(username);
+		//System.out.println(noOfItems);
+		session.setAttribute("cartitems", noOfItems);
 		cart.cartInsert(id,q,username);
 	
 		java.util.List data=pd.fromDatabase();

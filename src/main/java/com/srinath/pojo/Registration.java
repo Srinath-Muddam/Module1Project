@@ -18,9 +18,12 @@ public class Registration
 @Id
 private String userName;
 @Column
+private String lastName;
+@Column
 private String password;
 @Column
 private String dateOfBirth;
+
 @Column
 private String phoneNumber;
 @Column
@@ -28,7 +31,22 @@ private String address;
 @Column
 private String emailAddress;
 @Column
+private String gender;
+
+@Column
 private String role;
+public String getLastName() {
+	return lastName;
+}
+public void setLastName(String lastName) {
+	this.lastName = lastName;
+}
+public String getGender() {
+	return gender;
+}
+public void setGender(String gender) {
+	this.gender = gender;
+}
 @Column
 private boolean enabled;
 

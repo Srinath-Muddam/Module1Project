@@ -18,7 +18,7 @@ public class AuthenticationDaoImpl implements AuthenticationDao{
 	SessionFactory sf;
 	public void registration(Registration register) 
 	{ 
-		
+		//System.out.println(register.getPassword());
 		Session session=sf.openSession();
 		register.setRole("ROLE_USER");
 		register.setEnabled(true);

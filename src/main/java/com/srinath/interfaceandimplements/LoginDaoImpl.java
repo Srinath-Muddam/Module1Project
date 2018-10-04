@@ -1,17 +1,20 @@
 package com.srinath.interfaceandimplements;
 
 import org.hibernate.Query;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.srinath.pojo.Registration;
 @Component
 @Repository
-public class LoginDaoImpl implements LoginDao {
-
+public class LoginDaoImpl implements LoginDao
+{
+	
 	@Autowired 
 	SessionFactory sf;
 	public boolean login(String userName, String password) 
@@ -29,5 +32,9 @@ public class LoginDaoImpl implements LoginDao {
         return true;
         }
 	}
+	
+	
 
+	
+	
 }

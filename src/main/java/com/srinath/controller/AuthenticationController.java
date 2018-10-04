@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.srinath.interfaceandimplements.AuthenticationDao;
+import com.srinath.interfaceandimplements.CartDao;
 import com.srinath.interfaceandimplements.LoginDao;
 import com.srinath.pojo.Registration;
 
 @Controller
 public class AuthenticationController 
 {
+	
 	@Autowired
 	AuthenticationDao ad;
 	@Autowired
@@ -23,7 +25,7 @@ public class AuthenticationController
 public ModelAndView registration() 
 {
 		
-		ModelAndView mv=new ModelAndView("Registration","register",new Registration()); 
+		ModelAndView mv=new ModelAndView("signup","register",new Registration()); 
 		return mv;
 		
 	
@@ -34,7 +36,7 @@ public ModelAndView registration()
 	//	registration.setUserId((int)(Math.random()*10000000));
 		
 		ad.registration(registration);
-		return new ModelAndView("NewHome","",null);
+		return new ModelAndView("newnewHome","",null);
 	}
 @RequestMapping("/login")
 String login()
