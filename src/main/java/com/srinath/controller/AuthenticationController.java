@@ -36,7 +36,7 @@ public ModelAndView registration()
 	//	registration.setUserId((int)(Math.random()*10000000));
 		
 		ad.registration(registration);
-		return new ModelAndView("newnewHome","",null);
+		return new ModelAndView("afterRegistration","",null);
 	}
 @RequestMapping("/login")
 String login()

@@ -13,7 +13,7 @@
 <h1 class="text-center">Welcome <%=session.getAttribute("UserName")%></h1>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
  <!-- Brand -->
- <a class="navbar-brand" href="">A2Z</a>
+ <a class="navbar-brand" href="adminhome">A2Z</a>
 
  <!-- Links -->
  <ul class="navbar-nav">

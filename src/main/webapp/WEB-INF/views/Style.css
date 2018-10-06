@@ -1,0 +1,21 @@
+
+.padding-10px
+{
+    padding: 10px;
+}
+.marginbottom-0px
+{
+    margin-bottom: 0px;
+}
+.navFooterBackToTop
+{
+background-color:black;
+color:White
+}
+.myColor{
+
+background-color:rgb(0, 68, 128);
+color:White;
+}
+
+    #navBarSearchForm input[type=text]{width:430px !important;}

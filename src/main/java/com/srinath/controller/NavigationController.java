@@ -18,7 +18,7 @@ public class NavigationController
 ModelAndView mv() 
 {
 	List productData=pd.fromDatabase();
-	return new ModelAndView("User","pd",productData);
+	return new ModelAndView("ViewProducts","pd",productData);
 }
 
 @RequestMapping("/admin")
