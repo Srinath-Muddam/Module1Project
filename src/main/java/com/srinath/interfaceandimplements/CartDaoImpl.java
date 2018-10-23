@@ -36,6 +36,7 @@ public class CartDaoImpl implements CartDao
 		cart.setCartUser(username);
 		
 		System.out.println(cart.getCartUser());
+		cart.setProductId(productId);
 		cart.setProductName(product.getProductName());
 		cart.setProductPrice(product.getProductPrice());
 		cart.setQuantity(quantity);
@@ -79,7 +80,10 @@ public class CartDaoImpl implements CartDao
 	query.setParameter("uname",username);
 	Long items=(Long)query.uniqueResult();
 	//System.out.println(items);
+	
+	session.close();
 	return items;
+	
 		
 	}
 

@@ -34,13 +34,18 @@ ModelAndView cart(@RequestParam("id")int id, @RequestParam("quantity")int q )
 
   
 		String username=(String)session.getAttribute("userId");
-		Long noOfItems=cart.totalItems(username);
-		//System.out.println(noOfItems);
-		session.setAttribute("cartitems", noOfItems);
+		
 		cart.cartInsert(id,q,username);
 	
 		java.util.List data=pd.fromDatabase();
-		ModelAndView mv=new ModelAndView("User","pd",data);
+		
+		
+		Long noOfItems=cart.totalItems(username);
+		//System.out.println(noOfItems);
+		session.setAttribute("cartitems", noOfItems);
+		
+		
+		ModelAndView mv=new ModelAndView("mobilePhoneProducts","pd",data);
 		
 		return mv;
 	
@@ -54,11 +59,20 @@ ModelAndView viewCart()
 {    
 	String username=(String)session.getAttribute("userId");
 	//cart.viewUserCart(username);
+	Long noOfItems=cart.totalItems(username);
+	//System.out.println(noOfItems);
+	session.setAttribute("cartitems", noOfItems);
+	
+	
 	
 	
 	java.util.List cartdata=cart.viewCart(username);
 	
-	return new ModelAndView("cart","cart",cartdata);
+	
+	ModelAndView mv=new ModelAndView("cart","cart",cartdata);
+	
+    return mv;
 }
+
 	
 }

@@ -19,7 +19,7 @@ ModelAndView mv(@RequestParam("proId") int pro)
 {
 	Product product=pd.details(pro);
 	
-	ModelAndView mv=new ModelAndView("userproducts","p",product);
+	ModelAndView mv=new ModelAndView("viewProductDetails","p",product);
 	
 	return mv;
 }

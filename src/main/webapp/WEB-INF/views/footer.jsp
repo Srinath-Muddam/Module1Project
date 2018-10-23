@@ -41,7 +41,7 @@
         </div>
         </div>
     </div>
-    <a class=""  href="#nav-top" id="navBackToTop"><div class="navFooterBackToTop text-center "><span class="navFooterBackToTopText">Back to top</span></div></a>
+    <a class=""  href="#nav-top" ><div class="navFooterBackToTop text-center "><span class="navFooterBackToTopText">Back to top</span></div></a>
     
 </nav>
 </footer>

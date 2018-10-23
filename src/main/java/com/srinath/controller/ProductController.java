@@ -3,8 +3,12 @@ package com.srinath.controller;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.util.List;
 
+import javax.servlet.ServletContext;
+
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -23,6 +27,7 @@ import com.srinath.pojo.Product;
 @Controller
 public class ProductController 
 {
+	
 	
 @Autowired
 ProductDao pd;
@@ -44,7 +49,7 @@ SuplierDao sd;
 	return m1;
 		
 	}
-	@RequestMapping(value="saveproduct",method=RequestMethod.POST)
+	@RequestMapping(value="/saveproduct",method=RequestMethod.POST)
 	public ModelAndView toDaoAndTable(@ModelAttribute("pro") Product product) throws Exception
 	{
 	
@@ -55,9 +60,35 @@ SuplierDao sd;
 		File file=new File("D:\\Workspace-Photon\\MavenWebSpringMvcAndHibernate\\src\\main\\webapp\\resources\\"+product.getProductId()+".jpg");
 		
 		//System.out.println(image.getClass().getName());
+		InputStream inputStream=product.getProductImage().getInputStream();
+		
+		/*byte[] imageBytes=new byte[inputStream.available()];
+		
+		inputStream.read(imageBytes);*/
+		
+		
+		
 		FileOutputStream fos=new FileOutputStream(file);
+		/*fos.write(imageBytes);*/
+		
 		BufferedOutputStream bos=new BufferedOutputStream(fos);
 		bos.write(image.getBytes());
+		bos.close();
+		
+		/*
+		 ServletContext context = session.getServletContext();  
+		    String path = context.getRealPath(UPLOAD_DIRECTORY);  
+		    String filename = file.getOriginalFilename();  
+		  
+		    System.out.println(path+" "+filename);        
+		  
+		    byte[] bytes = file.getBytes();  
+		    BufferedOutputStream stream =new BufferedOutputStream(new FileOutputStream(  
+		         new File(path + File.separator + filename)));  
+		    stream.write(bytes);  
+		    stream.flush();  
+		    stream.close();  
+		*/
 	
 		pd.insert(product);
 		List productData=pd.fromDatabase();
@@ -78,6 +109,8 @@ SuplierDao sd;
 		ModelAndView mv=new ModelAndView("enterandshowproduct","pro",new Product()); 
 		List productList=pd.fromDatabase();
 		List categories=cd.fromDatabase();
+		 List supplier=sd.fromDatabase();
+		 mv.addObject("supplier",supplier);
 		mv.addObject("category",categories);
 		mv.addObject("pd",productList);
 	return mv;

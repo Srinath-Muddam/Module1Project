@@ -56,7 +56,7 @@ public ModelAndView loginError()
 	             {
 	                 session.setAttribute("UserLoggedIn", true);
 	                 session.setAttribute("UserName", user.getUserName());
-	             page="/NewHome";
+	             page="/userHome";
 	                 session.setAttribute("test",1);
 	                 
 	                 Long noOfItems=cart.totalItems(user.getUserName());

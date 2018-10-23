@@ -23,12 +23,22 @@ HttpSession session;
 OrderDao order;
 @Autowired
 CartDao cartdao;
+
+
 @RequestMapping("cancelOrder")	
 public ModelAndView cancelOrder() 
 {
 	String username=(String)session.getAttribute("userId");
 	
+	
+	
+	
 	order.cancelOrder(username);
+	
+	Long noOfItems=cartdao.totalItems(username);
+	//System.out.println(noOfItems);
+	session.setAttribute("cartitems", noOfItems);
+	
 	List cartdata=cartdao.viewCart(username);
 	return new ModelAndView("cart","cart",cartdata);
 }

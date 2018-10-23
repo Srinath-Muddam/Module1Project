@@ -6,10 +6,19 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
+<style>
+
+  /* Make the image fully responsive */
+  .carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+  
+</style>
 <body>
 
 <div class="container">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="500">
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -22,40 +31,40 @@
         </ol>
 
         <!-- Wrapper for slides -->
-        <div class="carousel-inner">
+         <div style="width:1140px;height:430px;">
+        <div class="carousel-inner" >
+       
             <div class="item active">
-                <img src="resources/slider-3.jpg" alt="" style="width:100%;">
+            <div class="row">
+               <!--  <img src="resources/slider-3.jpg" alt="" style="width:100%;"> -->
+                <img src="resources/4.jpg" alt="" style="width:50%;height:430px;"><img src="resources/7.jpg" alt="" style="width:50%;height:430px;">
             </div>
-
-            <div class="item">
-                <img src="resources/samsung.jpg" alt="" >
-            </div>
-
+</div>
             
 <div class="item">
 <div class="row">
-                <img src="resources/1.jpg"  alt=""  style="width:50%;"><img src="resources/5.jpg" alt="" style="width:50%;">
+                <img src="resources/1.jpg"  alt=""  style="width:50%;height:430px;"><img src="resources/5.jpg" alt="" style="width:50%;height:430px;">
                 
                 
             </div>
             </div>
             <div class="item">
             <div class="row">             
-               <img src="resources/2.jpg" alt="" style="width:50%;"><img src="resources/3.jpg" alt="" style="width:50%;">
+               <img src="resources/2.jpg" alt="" style="width:50%;height:430px;"><img src="resources/3.jpg" alt="" style="width:50%;height:430px;">
              
             </div>
             
             </div>
             <div class="item">
             <div class="row">
-                <img src="resources/4.jpg" alt="" style="width:50%;"><img src="resources/7.jpg" alt="" style="width:50%;">
+                <img src="resources/4.jpg" alt="" style="width:50%;height:430px;"><img src="resources/7.jpg" alt="" style="width:50%;height:430px;">
                 
             </div>
             </div>
             <div class="item">
             <div class="row">
                 
-                <img src="resources/8.jpg" alt="" style="width:50%;"><img src="resources/2.jpg" alt="" style="width:50%;">
+                <img src="resources/8.jpg" alt="" style="width:50%;height:430px;"><img src="resources/2.jpg" alt="" style="width:50%;height:430px;">
                 
             </div>
             </div>
@@ -72,7 +81,7 @@
         </a>
     </div>
   
-
+</div>
 </div>
 
 </body>

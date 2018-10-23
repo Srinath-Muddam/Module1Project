@@ -15,12 +15,17 @@ public String adminHome()
 	@RequestMapping("/home")
 	public String welcomePage() 
 	{
-		return "newnewHome";
+		return "mainHome";
+	}
+	@RequestMapping("/start")
+	public String start() 
+	{
+		return "mainHome";
 	}
 	
 	@RequestMapping("/userhome")
 public String afterUserLogin() {
-	return "NewHome";
+	return "userHome";
 }
 	
 	

@@ -7,9 +7,7 @@
 <body>
 
 
-   <jstl:if test="${sessionScope.user != null}">
-    There is a user **attribute** in the session
-</jstl:if>
+   
     
     <nav class="navbar navbar-default myColor" id="nav-top">
    <div class="container-fluid">
@@ -21,15 +19,27 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="home"><img src="resources/a2zlogo.jpg" alt=""   height="30" width="35"></a>
+              <jstl:if test="${sessionScope.UserLoggedIn!=true}">
+            <a class="navbar-brand" href="home"><img src="resources/a2zlogo.jpg" alt=""   height="30" width="35"></a></jstl:if>
+            
+              <jstl:if test="${sessionScope.UserLoggedIn==true}"> <a class="navbar-brand" href="userhome"><img src="resources/a2zlogo.jpg" alt=""   height="30" width="35"></a>
+              
+              <a class="navbar-brand" style="color:white;">hello <%=session.getAttribute("userId")%>!</a>
+              </jstl:if>
         </div>
         <div class="collapse navbar-collapse" id="Mynavbar">
             <ul class="nav navbar-nav">
-                <li><a style="color:white;" href="home">Home</a></li>     
+            
+             <jstl:if test="${sessionScope.UserLoggedIn!=true}">
+                <li><a style="color:white;" href="home">Home</a></li></jstl:if>    
+                
+                  <jstl:if test="${sessionScope.UserLoggedIn==true}">
+                <li><a style="color:white;" href="userhome">Home</a></li></jstl:if> 
+                 
                 <li class="dropdown"><a  style="color:white;" class="dropdown-toggle" data-toggle="dropdown" href="#">Categories <span
                         class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="user">Mobile Phones</a></li>
+                        <li><a href="mobilephones">Mobile Phones</a></li>
                         <li><a href="#"></a></li>
                         <li><a href="#"></a></li>
                         <li><a href="#"></a></li>
@@ -61,21 +71,67 @@
  </jstl:if> 
 <jstl:if test="${sessionScope.UserLoggedIn==true}">
 
-                <li class="dropdown"><a style="color:white;" class="dropdown-toggle" data-toggle="dropdown" href="#">My Account<span
+
+
+
+
+ <li class="dropdown  navbar-right" style="margin-top:18px;"><a  style="color:white;" class="dropdown-toggle" data-toggle="dropdown" href="#">My Account<span
                         class="caret"></span></a>
                     <ul class="dropdown-menu">
-                    
-                        <li><a href="pages/profile.html">Sign in</a></li>
-                            <li><a href="pages/profile.html">Sign up</a></li>
-                            
-                        <li><a href="pages/profile.html">Profile</a></li>
-                        <li><a href="pages/order.html">Orders</a></li>
-                        <li><a href="pages/login.html">Logout</a></li> 
+                        
+                        <li><a href="#"><button type="button" class="btn btn-primary">Profile<i class="fa fa-user-circle-o" style="font-size:20px;"></i></li>
+                        
+                        <li><a href="viewcart" >
+  <button type="button" class="btn btn-primary">Cart<i class="fa fa-shopping-cart" style="font-size:20px;"></i><span class="badge">
+  <%= session.getAttribute("cartitems")
+  %>
+  
+  
+  </span></button></a></li>
+  <li><a href="perform_logout" ><button type="button" class="btn btn-primary">Logout<i class="fa fa-sign-out" style="font-size:20px;"></i></button></a></li>
                     </ul>
                 </li>
-            </ul>
+
+
+
+
+
+
+
+
+
+
+
+ 
+ <%-- <li class="dropdown navbar-nav navbar-right"  style="margin-top:18px;"><a  style="color:white;" class="dropdown-toggle" data-toggle="dropdown" href="#" >My Account<span class="caret" style="margin-top:20px;"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="perform_logout">Logout</a></li>
+                        <li><a href="viewcart" style="margin-top:20px;">
+  <button type="button" class="btn btn-primary">Cart<i class="fa fa-shopping-cart" style="font-size:20px;"></i><span class="badge">
+  <%= session.getAttribute("cartitems")
+  %>
+  
+  
+  </span></button></li>
+                    </ul>
+                </li>
+ --%>
+
+
+ 
+
+
+
+
+
+
+
+
         </div>
     </div>
+    
+    
     </jstl:if>   
 </nav>
 </body>

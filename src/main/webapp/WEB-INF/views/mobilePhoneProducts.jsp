@@ -5,11 +5,16 @@
 <head>
     <title>Products</title>
     <meta charset="utf-8">
+   <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="jstl" %>
 </head>
 <style>
@@ -46,17 +51,17 @@
         </div>
     </div>
  <!-- <div class="row"> -->
-   <jstl:forEach items="${pd}" var="p">
-        <div class="col-sm-4">
+   <jstl:forEach items="${pd}" var="p"  >
+        <div class="col-sm-4"  style="width:33.33%;height:330px;">
             <div class="thumbnail">
                 <a href="details?proId=${p.productId}">
-                <img src="resources/${p.productId}.jpg" alt="e" style="width:111x150 pixels" class="product-img aok.aok-align-center">
+                <img src="resources/${p.productId}.jpg" alt="e" style="width:98px;height:200px;" class="product-img">
                     
                     <div class="caption">
                         <%-- <p class="text-center">${p.productId}</p> --%>
                         <p class="text-center">${p.productName}</p>
                          </a>
-                        <p>@${p.productPrice}</p>
+                        <p class="text-center"><i class="fa fa-rupee"> </i> ${p.productPrice} /-</p>
                     </div>
                
             </div>

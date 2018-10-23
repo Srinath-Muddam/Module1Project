@@ -29,6 +29,14 @@ private String productName;
 private int productPrice;
 	@Column
 private int totalPrice;
+	@Column
+	private int productId;
+public int getProductId() {
+		return productId;
+	}
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
 public int getCartId() {
 	return cartId;
 }

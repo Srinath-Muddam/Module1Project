@@ -2,6 +2,7 @@ package com.srinath.controller;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,11 +15,15 @@ public class NavigationController
 {
 	@Autowired
 	ProductDao pd;
-@RequestMapping("/user")
+	
+@RequestMapping("/mobilephones")
 ModelAndView mv() 
 {
+	System.out.println("working------------------------------------");
+	
 	List productData=pd.fromDatabase();
-	return new ModelAndView("ViewProducts","pd",productData);
+	return new ModelAndView("mobilePhoneProducts","pd",productData);
+
 }
 
 @RequestMapping("/admin")
